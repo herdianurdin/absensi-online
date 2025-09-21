@@ -1,0 +1,17 @@
+{
+  "name": "Absensi Online",
+  "short_name": "Absensi Online",
+  "description": "Aplikasi absensi online berbasis web.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#570df8",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

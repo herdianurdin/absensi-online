@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Absensi Online</title>
+    <style>
+        :root {
+            --background-color: #f0f3f8;
+            --text-color: #333;
+            --primary-color: #570df8;
+            --animation-color: #dbeafe;
+        }
+        html[data-theme="dark"] {
+             --background-color: #1d232a;
+             --text-color: #a6adbb;
+             --primary-color: #793ef9;
+             --animation-color: #2a323c;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.125rem;
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .illustration {
+            width: 150px;
+            height: 150px;
+            margin: 2rem auto;
+            animation: float 4s ease-in-out infinite;
+        }
+        .illustration svg {
+            width: 100%;
+            height: 100%;
+        }
+        .pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: var(--animation-color);
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0;
+            animation: pulse 5s ease-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="pulse"></div>
+    <div class="container">
+        <div class="illustration">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+               <path fill-rule="evenodd" d="M3.53 3.53a.75.75 0 011.06 0l15.91 15.91a.75.75 0 11-1.06 1.06L3.53 4.59a.75.75 0 010-1.06zM18.25 10.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0v-3.69l-1.5-1.5V16.25a.75.75 0 01-1.5 0v-5.5a.75.75 0 011.5 0v1.69l1.5 1.5V11.25a.75.75 0 01.75-.75zm-6-2.25a.75.75 0 00-1.5 0v.69L9.25 7.5v-3a.75.75 0 00-1.5 0v3a.75.75 0 00.75.75h1.25a.75.75 0 00.75-.75V8.25zm-3 8.25a.75.75 0 00-1.5 0v.69l-1.5-1.5V11.25a.75.75 0 00-1.5 0v5.5a.75.75 0 001.5 0v-1.69l1.5-1.5v3.69a.75.75 0 001.5 0v-5.5z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <h1>Anda Sedang Offline</h1>
+        <p>Koneksi internet terputus. Aplikasi ini memerlukan koneksi untuk dapat bekerja. Kami akan mencoba menyambungkan kembali secara otomatis.</p>
+    </div>
+    <script>
+        // Check for theme from localStorage to apply dark mode if necessary
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        window.addEventListener('online', () => {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>
