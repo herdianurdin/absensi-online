@@ -6,29 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#570df8" />
     <title>Absensi Online</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="manifest" href="/absensi-online/manifest.json" />
 
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "firebase/": "https://aistudiocdn.com/firebase@^12.3.0/",
-    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
-    "xlsx": "https://aistudiocdn.com/xlsx@^0.18.5",
-    "recharts": "https://aistudiocdn.com/recharts@^2.12.7",
-    "recharts/": "https://aistudiocdn.com/recharts@^2.12.7/",
-    "vite": "https://aistudiocdn.com/vite@^7.1.6",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.3"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/absensi-online/assets/index-Bir0QPGx.js"></script>
-</head>
+    <!-- =================================================================== -->
+    <!-- METODE 1: CDN (Untuk Google AI Studio Preview & Development Cepat) -->
+    <!-- Baris di bawah ini aktif secara default agar pratinjau berfungsi.  -->
+    <!-- =================================================================== -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <!-- =================================================================== -->
+    <!-- METODE 2: Build Lokal (Untuk Produksi & Development Lokal)         -->
+    <!-- Untuk menggunakan, beri komentar pada 2 baris CDN di atas,         -->
+    <!-- dan hapus komentar pada baris di bawah ini.                        -->
+    <!-- Lihat README.md untuk detail lebih lanjut.                         -->
+    <!-- =================================================================== -->
+
+
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://aistudiocdn.com/react@^19.1.1/",
+          "react": "https://aistudiocdn.com/react@^19.1.1",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+          "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.3",
+          "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.1",
+          "vite": "https://aistudiocdn.com/vite@^7.1.7",
+          "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+          "firebase/": "https://aistudiocdn.com/firebase@^12.3.0/",
+          "xlsx": "https://aistudiocdn.com/xlsx@^0.18.5",
+          "@firebase/auth": "https://aistudiocdn.com/@firebase/auth@^1.11.0",
+          "@firebase/app": "https://aistudiocdn.com/@firebase/app@^0.14.3",
+          "@firebase/database": "https://aistudiocdn.com/@firebase/database@^1.1.0"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/absensi-online/assets/index-BX8BGOfO.js"></script>
+    <link rel="stylesheet" crossorigin href="/absensi-online/assets/index-DEhOQrmF.css">
+  </head>
   <body>
     <div id="root"></div>
   </body>
